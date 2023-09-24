@@ -9,7 +9,7 @@ int main(int argc, char** argv) {
 	RPC_STATUS err = UuidCreateSequential(&uuid);
 
 	if (err != RPC_S_OK) {
-		std::wcerr << L"Failed to Create UUID";
+		std::wcerr << L"Failed to Create UUID" << std::endl;
 		return err;
 	}
 
@@ -18,10 +18,10 @@ int main(int argc, char** argv) {
 	err = UuidToString(&uuid, &stringUuid);
 
 	if (err != RPC_S_OK) {
-		std::wcerr << L"Failed to Convert UUID To String";
+		std::wcerr << L"Failed to Convert UUID To String" << std::endl;
 		return err;
 	}
 
-	std::wcout << (wchar_t*)stringUuid;
+	std::wcout << (wchar_t*)stringUuid << std::endl;
 	return err;
 }
